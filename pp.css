@@ -1,0 +1,47 @@
+<body>
+{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+.header
+{
+background-image:url(rest.jpg);
+height:100vh;
+width:100%;
+background-position:center;
+background-size:cover;
+}
+.navbar
+{
+text-align:center;
+padding:20px;
+}
+navbar
+{
+text-align:center;
+padding:20px;
+.head-content img;
+{
+border-radius:50%;
+border:4px solid#fff;
+margin-top:20px;
+}
+.head-content img:hover
+{
+border:8px solid#000;
+}
+.name
+{
+cursor:pointer;
+font-size:60px;
+color:#fff;
+font-family:algerian;
+}
+.desc
+{
+cursor:default;
+font-size:40px;
+color:#fff;
+font-family:harmol solid;
+}
