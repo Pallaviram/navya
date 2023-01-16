@@ -1,0 +1,37 @@
+#Sample Automation script
+$OWASPD_path = "C:\Users\Administrator\Downloads\Demo\dependency-check-7.4.1-release\dependency-check\bin"
+$VGC_Path = "C:\Program Files (x86)\VisualCodeGrepper"
+
+Write-Host " "
+Write-Host " "
+Write-Host "=============================================="
+Write-Host "PowerShell to Automate the SCA and SAST Scans"
+Write-Host "=============================================="
+Write-Host " "
+Write-Host ""
+Write-Host "SCA Scan : OWASP Dependency Checker"
+Write-Host "------------------------------------"
+$dependency_path = Read-Host "Please enter the path for Dependency checker with pattern"
+Write-Host "Your Dependency path:"
+Write-Host $dependency_path
+Set-Location -Path $OWASPD_path
+
+Write-Host "The current working directory" 
+pwd
+
+dependency-check.bat --scan $dependency_path
+#C:\Users\Administrator\Downloads\Demo\nxparser-master\nxparser-master\**\*.jar
+Write-Host " "
+Write-Host "SAST Scan: Visual Code Grepper "
+Write-Host "--------------------------------"
+$VGC_code_path = Read-Host "Please enter the directory path for the Visual Code Grepper"
+$VGC_l = Read-Host "Please enter the programming langauge [Enter any one from the list: CPP, PLSQL, JAVA, CS, VB, PHP, COBOL"
+Write-Host "Your Scanning folder"
+Write-Host $VGC_code_path
+Write-Host "Current Working directory"
+Set-Location -Path $VGC_Path 
+pwd
+./Visualcodegrepper.exe -c -l $VGC_l -t $VGC_code_path --results C:\Users\Administrator\Downloads\Demo\dvja-master\result.csv
+Write-Host " "
+Write-Host "--------------------------------------"
+Write-Host "End of Sample Automation script"
